@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bnl-fe/buyers/lrp": ["libs/buyers/lrp/src/index.ts"],
+      "@bnl-fe/buyers/vip": ["libs/buyers/vip/src/index.ts"],
+      "@bnl-fe/sellers/svip": ["libs/sellers/svip/src/index.ts"],
+      "@bnl-fe/sellers/syi": ["libs/sellers/syi/src/index.ts"],
+      "@bnl-fe/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@bnl-fe/shared/utils": ["libs/shared/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

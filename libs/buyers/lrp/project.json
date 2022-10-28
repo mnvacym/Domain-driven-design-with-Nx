@@ -1,0 +1,44 @@
+{
+  "name": "buyers-lrp",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/buyers/lrp/src",
+  "projectType": "library",
+  "tags": ["type:feature", "domain:buyers"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/buyers/lrp",
+        "tsConfig": "libs/buyers/lrp/tsconfig.lib.json",
+        "project": "libs/buyers/lrp/package.json",
+        "entryFile": "libs/buyers/lrp/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/buyers/lrp/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/buyers/lrp/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/buyers/lrp"],
+      "options": {
+        "jestConfig": "libs/buyers/lrp/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

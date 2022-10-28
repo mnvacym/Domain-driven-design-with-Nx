@@ -1,0 +1,44 @@
+{
+  "name": "sellers-syi",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sellers/syi/src",
+  "projectType": "library",
+  "tags": ["type:feature", "domain:sellers"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sellers/syi",
+        "tsConfig": "libs/sellers/syi/tsconfig.lib.json",
+        "project": "libs/sellers/syi/package.json",
+        "entryFile": "libs/sellers/syi/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/sellers/syi/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sellers/syi/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/sellers/syi"],
+      "options": {
+        "jestConfig": "libs/sellers/syi/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

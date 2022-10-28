@@ -13,6 +13,41 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "domain:buyers",
+                "onlyDependOnLibsWithTags": ["domain:buyers"]
+              },
+              {
+                "sourceTag": "domain:sellers",
+                "onlyDependOnLibsWithTags": ["domain:sellers"]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": [
+                  "domain:sellers",
+                  "domain:buyers"
+                ]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": ["type:utils"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:ui"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:ui"]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:utils",
+                  "type:ui"
+                ]
+              },
+              {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
               }
